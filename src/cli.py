@@ -1,4 +1,3 @@
-
 import argparse
 import random
 import os
@@ -117,7 +116,7 @@ class VINCI:
             elif basic_parser[0] == "OUTPUT":
                 if len(basic_parser) == 2:
                     if basic_parser[1].isalpha():
-                        self.log.append(self.variables[basic_parser[1]])
+                        print(self.variables[basic_parser[1]])
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
@@ -130,7 +129,7 @@ class VINCI:
                         index+=1
                         if index > 4:
                             parsed_output = parsed_output + char
-                    self.log.append(parsed_output)
+                    print(parsed_output)
                 else:
                     raise RuntimeError("ERROR: Must be alphabetical.")
             elif basic_parser[0] == "OUTPUTCHAR":
@@ -141,7 +140,7 @@ class VINCI:
                 except Exception as e:
                     raise RuntimeError(f"ERROR: ASCII Error: {e}")
                     
-                self.log.append(text)
+                print(text)
             elif basic_parser[0] == "INPUTCHAR":
                 text = input("INPUT CHARACTERS: ")
                 characters = list(text)
@@ -152,7 +151,6 @@ class VINCI:
                     except Exception as e:
                         raise RuntimeError(f"ERROR: ASCII Error: {e}")
                         
-                    self.log.append(text)
                 else:
                     raise RuntimeError(f"USER ERROR: Input must be {len(basic_parser)-1} characters long.")
             else:
