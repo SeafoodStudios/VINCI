@@ -1,3 +1,4 @@
+
 import argparse
 import random
 import os
@@ -269,7 +270,7 @@ def main():
             print("VINCI is a general-purpose, number oriented programming language designed to be beginner friendly.")
             print("VINCI has a very unique syntax, and it requires a small learning curve. It has variables, which are the storage method. There is also memory, which is where calculations are performed. There are no loops or conditionals, because there is a JUMP method, allowing you to jump to LABELs in the program.")
             yesno = input("Would you like to learn about the commands? (y/n): ")
-            if isinstance(str, yesno) and yesno == "y":
+            if isinstance(yesno, str) and yesno == "y":
                 print("Commands:")
                 print("VALUE <number>: Assigns a numerical value to memory.")
                 print("ADD <var1> <var2>: Adds two variables and stores the result in memory.")
