@@ -122,16 +122,13 @@ class VINCI:
                 else:
                     raise RuntimeError("ERROR: Too many arguments.")
             elif basic_parser[0] == "LOG":
-                if basic_parser[1].isalpha():
-                    parsed_output = ""
-                    index = 0
-                    for char in line:
-                        index+=1
-                        if index > 4:
-                            parsed_output = parsed_output + char
-                    print(parsed_output)
-                else:
-                    raise RuntimeError("ERROR: Must be alphabetical.")
+                parsed_output = ""
+                index = 0
+                for char in line:
+                    index+=1
+                    if index > 4:
+                        parsed_output = parsed_output + char
+                print(parsed_output)
             elif basic_parser[0] == "OUTPUTCHAR":
                 text = ""
                 try:
