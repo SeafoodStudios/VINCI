@@ -38,11 +38,11 @@ Error at line 1: list index out of range
 ```
 This error means that you need to use a numerical argument.
 ```
-Error labeling: ERROR: Must be numerical.
+ERROR: Must be numerical.
 ```
 This error means that you need to use an alphabetical argument.
 ```
-Error labeling: ERROR: Must be alphabetical.
+ERROR: Must be alphabetical.
 ```
 ## Thanks
 Thanks for using VINCI!
