@@ -1,9 +1,6 @@
 # VINCI Programming Language
 VINCI is a general purpose programming language that is numbers oriented and retro. It is designed for mathematical equations, educational programming and transitioning from higher to lower level languages.
 
-> [!NOTE]
-> Please note that VINCI is still in early development. Use it at your own risk, because there may be bugs in the code.
-
 ## Installation
 To install VINCI, run this in your terminal. You must have at least PIP and Python 3.11 installed.:
 ```
