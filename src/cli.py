@@ -1,3 +1,4 @@
+
 import argparse
 import random
 import os
@@ -22,7 +23,7 @@ class VINCI:
                         raise RuntimeError("ERROR: Must be numerical.")
                     self.memory = float(basic_parser[1])
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "ADD":
                 if len(basic_parser) == 3:
                     if basic_parser[1].isalpha() and basic_parser[2].isalpha():
@@ -33,7 +34,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "MINUS":
                 if len(basic_parser) == 3:
                     if basic_parser[1].isalpha() and basic_parser[2].isalpha():
@@ -44,7 +45,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "MULTIPLY":
                 if len(basic_parser) == 3:
                     if basic_parser[1].isalpha() and basic_parser[2].isalpha():
@@ -55,7 +56,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "DIVIDE":
                 if len(basic_parser) == 3:
                     if basic_parser[1].isalpha() and basic_parser[2].isalpha():
@@ -66,7 +67,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "SET":
                 if len(basic_parser) == 2:
                     if basic_parser[1].isalpha():
@@ -74,7 +75,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "LOAD":
                 if len(basic_parser) == 2:
                     if basic_parser[1].isalpha():
@@ -85,7 +86,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")  
+                    raise RuntimeError("ERROR: Incorrect argument amount.")  
             elif basic_parser[0] == "INPUT":
                 if len(basic_parser) == 2:
                     if basic_parser[1].isalpha():
@@ -98,7 +99,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "COMMENT":
                 return
             elif basic_parser[0] == "LABEL":
@@ -112,7 +113,7 @@ class VINCI:
                         raise RuntimeError(f"ERROR: Must be float: {e}")
                     self.memory = random.uniform(lower, upper)
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "OUTPUT":
                 if len(basic_parser) == 2:
                     if basic_parser[1].isalpha():
@@ -120,7 +121,7 @@ class VINCI:
                     else:
                         raise RuntimeError("ERROR: Must be alphabetical.")
                 else:
-                    raise RuntimeError("ERROR: Too many arguments.")
+                    raise RuntimeError("ERROR: Incorrect argument amount.")
             elif basic_parser[0] == "LOG":
                 parsed_output = ""
                 index = 0
@@ -172,7 +173,7 @@ class VINCI:
                         else:
                             raise RuntimeError("ERROR: Must be alphabetical.")
                     else:
-                        raise RuntimeError("ERROR: Too many arguments.")
+                        raise RuntimeError("ERROR: Incorrect argument amount.")
                 index += 1
             
             line = 0
@@ -192,7 +193,7 @@ class VINCI:
                                     line = labels[jump_parser[1]]
                                     continue
                                 else:
-                                    raise RuntimeError("ERROR: Too many arguments.")
+                                    raise RuntimeError("ERROR: Incorrect argument amount.")
                             else:
                                 raise RuntimeError("ERROR: Label does not exist.")
                         else:
@@ -205,7 +206,7 @@ class VINCI:
                                         line = labels[jump_parser[1]]
                                         continue
                                     else:
-                                        raise RuntimeError("ERROR: Too many arguments.")
+                                        raise RuntimeError("ERROR: Incorrect argument amount.")
                                 else:
                                     raise RuntimeError("ERROR: Label does not exist.")
                             else:
@@ -214,7 +215,7 @@ class VINCI:
                         if len(jump_parser) == 1:
                             running = 0
                         else:
-                            raise RuntimeError("ERROR: Too many arguments.")
+                            raise RuntimeError("ERROR: Incorrect argument amount.")
                     else:
                         self.basic_runline(full_parser[line])
                     line += 1
@@ -245,7 +246,10 @@ def main():
         args = parser.parse_args()
         
         if args.command is None:
-            args.command = "info"
+            print("VINCI Programming Language")
+            print("'Study without desire spoils the memory, and it retains nothing that it takes in'")
+            print("― Leonardo da Vinci")
+            exit()
         if args.command == "init":
             if os.path.exists(args.fileforinit):
                 print("File already exists, could not create file.")
